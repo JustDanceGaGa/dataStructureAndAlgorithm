@@ -3,7 +3,7 @@ package com.my.array.lesson;
 import java.util.Scanner;
 
 /**
- * 数组实现环形队列
+ * 数组实现环形队列 
  * @author 12209
  *
  */
