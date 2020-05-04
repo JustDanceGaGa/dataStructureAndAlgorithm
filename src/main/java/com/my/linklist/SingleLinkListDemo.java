@@ -100,7 +100,7 @@ class SingleLinkList{
 		  //定位到要删除的节点的上一个节点
 		  if(temp.next.num == node.num){
 			  //需要删除的节点
-			  HeroNode delete =  temp.next;
+			  HeroNode delete =  temp.next; 
 			  
 			  //将要删除的节点 delete 上一个节点的 next 设置为要 delete 节点的下一个节点
 			  temp.next  = temp.next.next;
