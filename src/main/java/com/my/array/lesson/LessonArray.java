@@ -1,5 +1,6 @@
 package com.my.array.lesson;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -110,10 +111,38 @@ class CircleArray{
           return arr[front];
 	  }
 }
+
+
 public class LessonArray {
+	
+	 public static int titleToNumber(String s) {
+		 
+		//26进制转10进制
+	      /*  int i ;
+	        int sum = 0;
+	        for(i = 0 ; i <= s.length() -1; i++){
+	           sum = sum +  (int)Math.pow(26,s.length()-i-1)*(s.charAt(i) % 64);
+	        }
+	        return sum;*/
+		 
+	        HashMap<String,Integer> dict = new HashMap<String,Integer>();
+	        
+	        String[] dicStrArr = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
+	        for(int i=0;i<dicStrArr.length;i++){
+		        	dict.put(dicStrArr[i], Integer.valueOf(i+1));
+	        	
+	        }
+	        char[] colStrArr = s.toCharArray();
+	        int sumRes = 0;
+	        for(int i=0;i<=colStrArr.length-1;i++){
+	        	sumRes+=dict.get(colStrArr[i]+"")*Math.pow(26,colStrArr.length-1-i);
+	        }
+	        return sumRes;
+	    }
 
 	public static void main(String[] args) {
-		 System.out.println("测试数组模拟环形队列");
+		System.out.println(titleToNumber("ZY"));
+		/* System.out.println("测试数组模拟环形队列");
 		 CircleArray aq = new CircleArray(5);
          char key=' ';//接收用户输入
          Scanner scanner =new Scanner(System.in);
@@ -178,7 +207,7 @@ public class LessonArray {
 
             }
 
-         }
+         }*/
 	}
 
 }
